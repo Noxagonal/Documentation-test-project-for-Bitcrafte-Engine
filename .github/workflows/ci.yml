@@ -33,7 +33,7 @@ jobs:
           python-version: 3.x
 
       - run: |
-          if[ ! -d "~/engine-repo" ]; then
+          if [ ! -d "~/engine-repo" ]; then
             git clone https://github.com/Noxagonal/Bitcrafte-Engine.git ~/engine-repo
           fi
 
