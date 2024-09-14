@@ -1,6 +1,9 @@
 # Visual Studio Code files
 .vs
 
+# mkdocs file because it'll be regenerated as needed.
+mkdocs.yml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

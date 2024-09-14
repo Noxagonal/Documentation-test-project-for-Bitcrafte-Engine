@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set environment variables for GitHub Actions
+        run: |
+          echo "ENGINE_REPO_DIR=~/engine-repo" >> $GITHUB_ENV
+
       - name: Cache pip dependencies
         uses: actions/cache@v2
         with:
@@ -39,4 +43,5 @@ jobs:
 
       - run: sudo apt update && sudo apt install -y doxygen
       - run: pip install mkdocs-material mkdoxy
+      - run: python regenerate_mkdocs_yml.py
       - run: mkdocs gh-deploy --force
