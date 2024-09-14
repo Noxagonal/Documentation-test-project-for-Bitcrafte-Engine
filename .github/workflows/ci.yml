@@ -18,6 +18,8 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
+      - run: sudo apt update && sudo apt install -y doxygen
+      - run: doxygen --version
       - run: pip install mkdocs-material
       - run: doxygen --version
       - run: mkdocs gh-deploy --force
