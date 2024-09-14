@@ -11,14 +11,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          path: ~/.cache/pip
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache engine repository
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-engine-repo-${{ github.sha }} #???
+          path: ~/engine-repo
+          restore-keys: |
+            ${{ runner.os }}-engine-repo-
+
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - uses: actions/cache@v2
-        with:
-          key: ${{ github.ref }}
-          path: .cache
+
+      - run: |
+          if[ ! -d "~/engine-repo" ]; then
+            git clone https://github.com/Noxagonal/Bitcrafte-Engine.git ~/engine-repo
+          fi
+
       - run: sudo apt update && sudo apt install -y doxygen
-      - run: pip install mkdocs-material
-      - run: pip install mkdoxy
+      - run: pip install mkdocs-material mkdoxy
       - run: mkdocs gh-deploy --force
