@@ -42,6 +42,6 @@ jobs:
           fi
 
       - run: sudo apt update && sudo apt install -y doxygen
-      - run: pip install mkdocs-material mkdoxy
+      - run: pip install mkdocs-material mkdoxy python-dotenv
       - run: python regenerate_mkdocs_yml.py
       - run: mkdocs gh-deploy --force
