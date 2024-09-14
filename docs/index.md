@@ -25,3 +25,7 @@ auto test() -> const char*
 :fontawesome-brands-twitter:{ .twitter }
 
 :octicons-heart-fill-24:{ .heart }
+
+#### Testing update
+
+Test automatic update, expecting this to appear in github pages.
