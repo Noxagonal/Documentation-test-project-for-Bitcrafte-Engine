@@ -51,47 +51,12 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
-#  automatic emojis in markdown interfere with the code. Eg. bc::thread::Task will display a thread emoji because of :thread: in the code.
-#  - pymdownx.emoji:
-#      emoji_index: !!python/name:material.extensions.emoji.twemoji
-#      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - search
-  - mkdoxy:
-      projects:
-
-        Build configuration:
-          src-dirs: {{ENGINE_REPO_DIR}}/projects/engine/build_configuration/public/build_configuration
-          full-doc: True
-          doxy-cfg:
-            FILE_PATTERNS: "*.cpp *.h *.hpp"
-            RECURSIVE: True
-
-        Core:
-          src-dirs: {{ENGINE_REPO_DIR}}/projects/engine/core/public/core
-          full-doc: True
-          doxy-cfg:
-            FILE_PATTERNS: "*.cpp *.h *.hpp"
-            RECURSIVE: True
-
-#nav:
-#  - Home: index.md
-#  - Source Documentation:
-#
-#    - Build Configuration:
-#      - Overview: engine_components/build_configuration.md
-#      - Files: Build configuration/files.md
-#      - Classes: Build configuration/classes.md
-#      - Functions: Build configuration/functions.md
-#      - Variables: Build configuration/variables.md
-#
-#    - Core:
-#      - Overview: engine_components/core.md
-#      - Files: Core/files.md
-#      - Classes: Core/classes.md
-#      - Functions: Core/functions.md
-#      - Variables: Core/variables.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/Noxagonal/Bitcrafte-Engine/blob/main/LICENSE.md" target="_blank" rel="noopener">Niko Kauppi</a>
