@@ -5,7 +5,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
+#    - navigation.expand
     - navigation.top
     - toc.integrate
     - search.suggest
@@ -18,21 +18,21 @@ theme:
 
     - scheme: slate
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/toggle-switch
         name: Switch to light mode
       primary: orange
       accent: lime
 
     - scheme: default
       toggle:
-        icon: material/toggle-switch
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: orange
       accent: green
 
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/Noxagonal/Bitcrafte-Engine
 
     - icon: fontawesome/brands/twitter
