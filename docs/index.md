@@ -15,17 +15,3 @@ auto test() -> const char*
     return "I dunno...";
 }
 ```
-
-## Icons and Emojis
-
-:smile:
-
-:fontawesome-regular-face-laugh-wink:
-
-:fontawesome-brands-twitter:{ .twitter }
-
-:octicons-heart-fill-24:{ .heart }
-
-#### Testing update
-
-Test automatic update, expecting this to appear in github pages.
