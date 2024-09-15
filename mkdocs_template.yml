@@ -5,6 +5,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - toc.integrate
     - search.suggest
@@ -14,12 +15,14 @@ theme:
     - content.code.copy
   language: en
   palette:
+
     - scheme: slate
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
       primary: orange
       accent: lime
+
     - scheme: default
       toggle:
         icon: material/toggle-switch
@@ -31,6 +34,7 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/Noxagonal/Bitcrafte-Engine
+
     - icon: fontawesome/brands/twitter
     - icon: fontawesome/brands/linkedin
 
@@ -56,17 +60,38 @@ plugins:
   - search
   - mkdoxy:
       projects:
-        Core:
-          src-dirs: {{ENGINE_REPO_DIR}}/projects/engine/core/
+
+        Build configuration:
+          src-dirs: {{ENGINE_REPO_DIR}}/projects/engine/build_configuration/public/build_configuration
           full-doc: True
           doxy-cfg:
             FILE_PATTERNS: "*.cpp *.h *.hpp"
             RECURSIVE: True
 
-nav:
-  - Home: index.md
-  - Source Documentation:
-      - Core: Core/links.md
+        Core:
+          src-dirs: {{ENGINE_REPO_DIR}}/projects/engine/core/public/core
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.cpp *.h *.hpp"
+            RECURSIVE: True
+
+#nav:
+#  - Home: index.md
+#  - Source Documentation:
+#
+#    - Build Configuration:
+#      - Overview: engine_components/build_configuration.md
+#      - Files: Build configuration/files.md
+#      - Classes: Build configuration/classes.md
+#      - Functions: Build configuration/functions.md
+#      - Variables: Build configuration/variables.md
+#
+#    - Core:
+#      - Overview: engine_components/core.md
+#      - Files: Core/files.md
+#      - Classes: Core/classes.md
+#      - Functions: Core/functions.md
+#      - Variables: Core/variables.md
 
 copyright: |
   &copy; 2024 <a href="https://github.com/Noxagonal/Bitcrafte-Engine/blob/main/LICENSE.md" target="_blank" rel="noopener">Niko Kauppi</a>
